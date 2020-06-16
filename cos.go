@@ -179,3 +179,8 @@ func (c *Client) Delete(name string) error {
 	_, err := c.client.Object.Delete(context.Background(), name)
 	return err
 }
+
+// 获取原始 client
+func (c *Client) GetRawClient() *cos.Client {
+	return c.client
+}
